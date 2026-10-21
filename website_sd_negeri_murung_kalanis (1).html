@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD NEGERI Murung Kalanis - Website Resmi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display (Classic & Elegant) & Plus Jakarta Sans (Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldDeep: '#064e3b',
+                        emeraldPrimary: '#047857',
+                        goldAccent: '#d97706',
+                        goldLight: '#fef3c7',
+                        classicNavy: '#1e293b',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styling for Classic-Modern Elegance */
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#d97706 0.5px, transparent 0.5px), radial-gradient(#047857 0.5px, #f8fafc 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .sticker-badge {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sticker-badge:hover {
+            transform: scale(1.08) rotate(-3deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-goldAccent selection:text-white">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-amber-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & School Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emeraldPrimary to-emeraldDeep text-amber-300 flex items-center justify-center font-serif font-bold text-xl shadow-md border-2 border-amber-400 group-hover:rotate-6 transition-transform">
+                        <i class="fa-solid font-bold fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-lg sm:text-xl text-emeraldDeep leading-tight">SD NEGERI</span>
+                        <span class="block text-xs sm:text-sm font-semibold tracking-widest text-goldAccent uppercase">Murung Kalanis</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#home" class="px-4 py-2 rounded-full text-sm font-semibold text-slate-700 hover:text-emeraldPrimary hover:bg-emerald-50 transition">BERANDA</a>
+                    <a href="#profil" class="px-4 py-2 rounded-full text-sm font-semibold text-slate-700 hover:text-emeraldPrimary hover:bg-emerald-50 transition">PROFIL SEKOLAH</a>
+                    <a href="#pendidik" class="px-4 py-2 rounded-full text-sm font-semibold text-slate-700 hover:text-emeraldPrimary hover:bg-emerald-50 transition">TENAGA PENDIDIK</a>
+                    <a href="#galeri" class="px-4 py-2 rounded-full text-sm font-semibold text-slate-700 hover:text-emeraldPrimary hover:bg-emerald-50 transition">GALERI DOKUMENTASI</a>
+                    <a href="#kontak" class="ml-2 px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-emeraldPrimary to-emeraldDeep text-white shadow-md hover:shadow-lg transition hover:-translate-y-0.5">KONTAK</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-emeraldPrimary hover:bg-slate-100">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Beranda</a>
+            <a href="#profil" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Profil Sekolah</a>
+            <a href="#pendidik" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Tenaga Pendidik</a>
+            <a href="#galeri" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Galeri Dokumentasi</a>
+            <a href="#kontak" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emeraldPrimary">Kontak</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative bg-gradient-to-b from-emerald-900 via-emeraldDeep to-slate-900 text-white overflow-hidden py-20 lg:py-28">
+        <!-- Elegant Decorative Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 rounded-full bg-amber-400 blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-400 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-medium mb-6 backdrop-blur-md">
+                    <i class="fa-solid fa-award text-amber-400"></i> Selamat Datang di Portal Resmi
+                </span>
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                    SD NEGERI <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200">Murung Kalanis</span>
+                </h1>
+                <p class="text-emerald-100 text-base sm:text-lg mb-10 font-light leading-relaxed">
+                    Membina generasi cerdas, berkarakter mulia, berprestasi, serta membina landasan pendidikan berkualitas untuk masa depan anak bangsa.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#profil" class="px-7 py-3.5 rounded-full font-semibold text-emeraldDeep bg-gradient-to-r from-amber-300 to-amber-400 hover:from-amber-400 hover:to-amber-500 shadow-lg transition duration-200 hover:-translate-y-0.5">
+                        Jelajahi Profil
+                    </a>
+                    <a href="#galeri" class="px-7 py-3.5 rounded-full font-semibold text-white border border-emerald-400/50 bg-white/10 hover:bg-white/20 backdrop-blur-md transition duration-200 hover:-translate-y-0.5">
+                        Lihat Dokumentasi
+                    </a>
+                </div>
+            </div>
+
+            <!-- DYNAMIC STATS BANNER -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 text-center transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div class="text-3xl font-bold font-serif text-white">68</div>
+                    <div class="text-xs text-emerald-200 font-medium uppercase tracking-wider mt-1">Total Siswa</div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 text-center transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="text-3xl font-bold font-serif text-white">8</div>
+                    <div class="text-xs text-emerald-200 font-medium uppercase tracking-wider mt-1">Guru Pengajar</div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 text-center transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="text-3xl font-bold font-serif text-white">1</div>
+                    <div class="text-xs text-emerald-200 font-medium uppercase tracking-wider mt-1">Kepala Sekolah</div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 text-center transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="text-3xl font-bold font-serif text-white">1</div>
+                    <div class="text-xs text-emerald-200 font-medium uppercase tracking-wider mt-1">Staf Operator</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL SEKOLAH & EDUCATION BACKGROUND SECTION -->
+    <section id="profil" class="py-20 bg-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldAccent font-semibold text-sm uppercase tracking-widest block mb-2">Tentang Kami</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emeraldDeep">Profil SD NEGERI Murung Kalanis</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-emeraldPrimary to-goldAccent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Sambutan Kepala Sekolah Card -->
+            <div class="glass-card rounded-3xl p-6 sm:p-10 mb-16 shadow-xl gold-border-glow relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-4 text-center">
+                        <div class="relative inline-block">
+                            <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-gradient-to-br from-emeraldPrimary to-goldAccent p-1.5 shadow-xl mx-auto">
+                                <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-emeraldDeep text-5xl font-serif font-bold overflow-hidden">
+                                    <i class="fa-solid fa-user-tie text-slate-400"></i>
+                                </div>
+                            </div>
+                            <span class="absolute bottom-2 right-2 bg-goldAccent text-white p-2 rounded-full shadow-lg border-2 border-white" title="Kepala Sekolah">
+                                <i class="fa-solid fa-crown text-sm"></i>
+                            </span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-slate-900 mt-4">YONG CIMIN SEPRIANTO</h3>
+                        <p class="text-xs font-semibold text-goldAccent uppercase tracking-wider">Kepala Sekolah</p>
+                    </div>
+                    <div class="lg:col-span-8">
+                        <div class="flex items-center gap-2 text-goldAccent text-xl mb-3">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-semibold text-emeraldDeep mb-3">Sambutan Kepala Sekolah</h4>
+                        <p class="text-slate-600 leading-relaxed mb-4 text-sm sm:text-base">
+                            Selamat datang di website resmi SD NEGERI Murung Kalanis. Kami berkomitmen untuk memberikan layanan pendidikan terbaik bagi seluruh peserta didik, membentuk insan yang cerdas, kreatif, berakhlak mulia, serta siap menghadapi masa depan.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Dengan didukung oleh seluruh staf pengajar dan tenaga kependidikan yang berdedikasi, kami senantiasa berusaha menciptakan lingkungan belajar yang kondusif, menyenangkan, dan inspiratif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION BACKGROUND WITH DECORATIVE STUDENT STICKERS -->
+            <div class="relative bg-gradient-to-br from-white to-emerald-50/50 rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-lg">
+                <div class="text-center mb-10">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-emeraldDeep">Latar Belakang Pendidikan</h3>
+                    <p class="text-slate-500 text-sm mt-1">Landasan Nilai & Lingkungan Pembelajaran Berkelanjutan</p>
+                </div>
+
+                <!-- Floating Decorative Educational Badges/Stickers -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+                    <div class="sticker-badge bg-amber-100 border-2 border-amber-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">📚</div>
+                        <span class="text-xs font-bold text-amber-900 block">Kurikulum Terpadu</span>
+                    </div>
+                    <div class="sticker-badge bg-emerald-100 border-2 border-emerald-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">✏️</div>
+                        <span class="text-xs font-bold text-emerald-900 block">Karakter Unggul</span>
+                    </div>
+                    <div class="sticker-badge bg-blue-100 border-2 border-blue-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">🎒</div>
+                        <span class="text-xs font-bold text-blue-900 block">Siswa Aktif</span>
+                    </div>
+                    <div class="sticker-badge bg-purple-100 border-2 border-purple-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">⭐</div>
+                        <span class="text-xs font-bold text-purple-900 block">Prestasi Belajar</span>
+                    </div>
+                    <div class="sticker-badge bg-rose-100 border-2 border-rose-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">🎨</div>
+                        <span class="text-xs font-bold text-rose-900 block">Kreativitas Seni</span>
+                    </div>
+                    <div class="sticker-badge bg-teal-100 border-2 border-teal-300 rounded-2xl p-4 text-center shadow-sm">
+                        <div class="text-3xl mb-1">🏆</div>
+                        <span class="text-xs font-bold text-teal-900 block">Disiplin Tinggi</span>
+                    </div>
+                </div>
+
+                <!-- Educational Grid Info -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emeraldPrimary flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800 mb-2">Visi Sekolah</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Mewujudkan peserta didik yang bertaqwa, berprestasi, cerdas, berkepribadian baik, serta peduli terhadap lingkungan sekolah.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-goldLight text-goldAccent flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800 mb-2">Misi Sekolah</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Menyelenggarakan proses pembelajaran yang efektif, mengembangkan bakat minat siswa, serta menanamkan budi pekerti luhur sejak dini.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-3">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800 mb-2">Nilai Utama</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Integritas, kekeluargaan, kedisiplinan, serta semangat gotong royong dalam suasana belajar mengajar yang menyenangkan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TENAGA PENDIDIK & KEPENDIDIKAN SECTION -->
+    <section id="pendidik" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldAccent font-semibold text-sm uppercase tracking-widest block mb-2">Struktur Organisasi</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emeraldDeep">Tenaga Pendidik & Kependidikan</h2>
+                <p class="text-slate-500 text-sm mt-2">Tim Guru dan Staf SD NEGERI Murung Kalanis</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-emeraldPrimary to-goldAccent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Headmaster Featured Card -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border-2 border-goldAccent p-6 text-center transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-emeraldPrimary to-emeraldDeep text-white flex items-center justify-center text-3xl font-serif font-bold shadow-md mb-4 border-2 border-amber-300">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2">Kepala Sekolah</span>
+                    <h3 class="font-serif text-xl font-bold text-slate-900">YONG CIMIN SEPRIANTO</h3>
+                    <p class="text-xs text-slate-500 mt-1">Pimpinan SD NEGERI Murung Kalanis</p>
+                </div>
+            </div>
+
+            <!-- Teachers and Staff Grid (9 Persons) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Agus Wijaya -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Agus Wijaya, S.Pd.SD</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 2. Noorlela -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Noorlela, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 3. Yuvita Nengsi -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Yuvita Nengsi, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 4. Salmiah -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Salmiah, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 5. Budiyati -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Budiyati, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 6. Ranti Amelia -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-emerald-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emeraldPrimary flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-600 block">Guru Kelas</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Ranti Amelia, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 7. Norhikmah -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-amber-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-amber-50 text-goldAccent flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-goldAccent block">Guru Mapel</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Norhikmah, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 8. Hamidah -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-amber-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-amber-50 text-goldAccent flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-goldAccent block">Guru Mapel</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Hamidah, S.Pd</h4>
+                        <span class="text-xs text-slate-400">SD NEGERI Murung Kalanis</span>
+                    </div>
+                </div>
+
+                <!-- 9. Kristopo (Operator Operasional) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:shadow-md transition hover:border-blue-300 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold text-blue-600 block">Staf Pelayanan / Operator</span>
+                        <h4 class="font-serif font-bold text-slate-800 text-base">Kristopo</h4>
+                        <span class="text-xs text-slate-400">Operator Operasional</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Summary Note -->
+            <div class="mt-8 text-center text-xs text-slate-500 bg-white/60 py-3 rounded-full border border-slate-200 max-w-xl mx-auto">
+                <i class="fa-solid fa-info-circle text-emeraldPrimary mr-1"></i>
+                Total Tenaga Pendidik & Kependidikan: 1 Kepala Sekolah, 6 Guru Kelas, 2 Guru Mapel, 1 Staf Operator.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERI DOKUMENTASI SECTION -->
+    <section id="galeri" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldAccent font-semibold text-sm uppercase tracking-widest block mb-2">Galeri Kegiatan</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emeraldDeep">Galeri Dokumentasi</h2>
+                <p class="text-slate-500 text-sm mt-2">Momen dan Aktivitas Utama di SD NEGERI Murung Kalanis</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-emeraldPrimary to-goldAccent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Gallery Grid with Exact 4 Photos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Foto 1 -->
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="WhatsApp Image 2026-10-15 at 11.26.23.jpeg" alt="Dokumentasi kunjungan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="inline-block px-2.5 py-1 bg-amber-500 text-slate-900 text-xs font-bold rounded mb-2">Foto 1</span>
+                            <h3 class="font-serif text-lg font-bold">Dokumentasi kunjungan</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-slate-100">
+                        <p class="text-xs text-slate-600 flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-goldAccent"></i>
+                            Dokumentasi kegiatan kunjungan resmi di SD NEGERI Murung Kalanis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="WhatsApp Image 2026-10-15 at 11.26.22.jpeg" alt="Kegiatan senam sehat di pagi hari" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="inline-block px-2.5 py-1 bg-amber-500 text-slate-900 text-xs font-bold rounded mb-2">Foto 2</span>
+                            <h3 class="font-serif text-lg font-bold">Kegiatan senam sehat di pagi hari</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-slate-100">
+                        <p class="text-xs text-slate-600 flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-goldAccent"></i>
+                            Pelaksanaan senam sehat bersama siswa dan guru guna menjaga kebugaran di pagi hari.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="WhatsApp Image 2026-10-15 at 11.26.16.jpeg" alt="Kegiatan Maulid Nabi yang di selenggarakan di sekolah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="inline-block px-2.5 py-1 bg-amber-500 text-slate-900 text-xs font-bold rounded mb-2">Foto 3</span>
+                            <h3 class="font-serif text-lg font-bold">Kegiatan Maulid Nabi yang di selenggarakan di sekolah</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-slate-100">
+                        <p class="text-xs text-slate-600 flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-goldAccent"></i>
+                            Peringatan hari besar keagamaan Maulid Nabi Muhammad SAW yang diselenggarakan di sekolah.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="WhatsApp Image 2026-10-15 at 11.26.15.jpeg" alt="Kegiatan jalan santai bersama kepala sekolah dan guru yang lain" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="inline-block px-2.5 py-1 bg-amber-500 text-slate-900 text-xs font-bold rounded mb-2">Foto 4</span>
+                            <h3 class="font-serif text-lg font-bold">Kegiatan jalan santai bersama kepala sekolah dan guru yang lain</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-slate-100">
+                        <p class="text-xs text-slate-600 flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-goldAccent"></i>
+                            Kebersamaan dalam kegiatan jalan santai bersama Kepala Sekolah YONG CIMIN SEPRIANTO, para guru, dan para siswa.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER & KONTAK -->
+    <footer id="kontak" class="bg-gradient-to-b from-slate-900 to-emeraldDeep text-white pt-16 pb-8 border-t-4 border-goldAccent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-amber-400 text-emeraldDeep flex items-center justify-center font-serif font-bold text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg text-white">SD NEGERI Murung Kalanis</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Sekolah Dasar Negeri Murung Kalanis bertekad mencetak generasi murid yang berakhlak, cerdas, dan tangguh.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-800/80 text-xs text-emerald-300">
+                        <i class="fa-solid fa-users"></i> Total Siswa: <strong>68 Siswa</strong>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4 border-b border-amber-400/30 pb-2 inline-block">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-amber-300 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Beranda</a></li>
+                        <li><a href="#profil" class="hover:text-amber-300 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Profil Sekolah</a></li>
+                        <li><a href="#pendidik" class="hover:text-amber-300 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Tenaga Pendidik</a></li>
+                        <li><a href="#galeri" class="hover:text-amber-300 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs text-amber-400"></i> Galeri Dokumentasi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-4 border-b border-amber-400/30 pb-2 inline-block">Informasi Sekolah</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-amber-400 mt-1"></i>
+                            <span>SD NEGERI Murung Kalanis, Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-user-tie text-amber-400"></i>
+                            <span>Kepala Sekolah: <strong>YONG CIMIN SEPRIANTO</strong></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-headset text-amber-400"></i>
+                            <span>Operator: <strong>Kristopo</strong></span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 SD NEGERI Murung Kalanis. Seluruh Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
